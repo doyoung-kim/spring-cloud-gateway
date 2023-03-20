@@ -1,0 +1,58 @@
+//동작확인
+GET http://localhost:8800/apisample/sample-api/v1/boards
+
+
+POST  http://localhost:8800/apisample/sample-api/v1/boards/list
+Content-Type: application/json
+
+{  
+  "payLoad": "sample-api/v1/boards/list",
+  "page": 1,
+  "size": 10
+}
+
+
+POST http://localhost:8800/apisample/sample-api/v1/boards/list
+Content-Type: text/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<header xmlns="http://schemas.xmlsoap.org/soap/envelope"> 
+   <commonHeader xmlns="">  
+      <appName>SAMPLE_ID01</appName>
+      <svcName >/sample-api/v1/boards/list</svcName>
+      <fnName>boardListPaging</fnName> 
+      <fnCd></fnCd>      
+   </commonHeader>
+</header>
+<body xmlns="http://schemas.xmlsoap.org/soap/envelope"> 
+   <service_request xmlns="">
+      <bizHeader>
+         <orderId>sampeId</orderId>
+         <cbSvcName>api/boards</cbSvcName>
+         <cbFnName>list</cbFnName>       
+      </bizHeader>
+      <boardPayload>
+         <page>1</page>
+         <size>10</size>
+         <person>               
+            <empNum>99102233</empNum>
+            <empName>홍길동</empName>    
+            <age>39</age>   
+            <tel>010-6338-9898</tel>         
+         </person>
+         <person>               
+            <empNum>99102243</empNum>
+            <empName>배철수</empName>    
+            <age>62</age>   
+            <tel>010-5432-2367</tel>         
+         </person>   
+         <person>               
+            <empNum>99102324</empNum>
+            <empName>이수지</empName>    
+            <age>29</age>   
+            <tel>010-9377-2562</tel>         
+         </person>                
+        
+      </boardPayload>     
+   </service_request>
+</body>
